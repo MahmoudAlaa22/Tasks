@@ -8,22 +8,25 @@ class ButtonDateOrTime extends StatelessWidget {
   const ButtonDateOrTime({@required this.onTap,@required this.iconData,@required this.title});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-        child: Container(
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-            boxShadow: [BoxShadow(blurRadius: 3)]
-          ),
-      child: Row(
-        mainAxisSize:MainAxisSize.min ,
-        children: [
-          Icon(iconData),
-          Text(title)
-        ],
-      ),
-    ));
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10.0),
+      child: GestureDetector(
+        onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.all(7),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+              boxShadow: [BoxShadow(blurRadius: 2)]
+            ),
+        child: Row(
+          mainAxisSize:MainAxisSize.min ,
+          children: [
+            Icon(iconData),
+            Text(title)
+          ],
+        ),
+      )),
+    );
   }
 }
